@@ -1,0 +1,41 @@
+1. The program outputs an error because new_line is not declared.
+
+2. as an int: it prints an integer just fine and code works
+   as a double: it runs but doesn't show something readable
+   as a string: doesn't run, error appears saying it doesn't work
+
+3. 
+
+What happens if you use a function without a result as part of an expression, like new_line() + 7?
+
+#include <iostream>
+using namespace std;
+
+void new_line() 
+ {
+    cout << endl;
+}
+
+int main() {
+new_line() + 7
+    return 0;
+}
+
+What happens is that the program runs into problems with void and int since it can do that expression because it's invalid.
+
+What happens if you call a function and you don’t do anything with the result (i.e. you don’t assign it to a variable or use it as part of a larger expression)?
+
+#include <iostream>
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int sum = add(6, 7);
+    cout << "The sum is: " << sum << endl;
+    add(6, 7);
+    cout << "We called add(6, 7) but did nothing with it" << endl;
+    return 0;
+}
